@@ -1,0 +1,72 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.vivo.chat.weight.refresh.smartrefresh.refresh-layout-merged_res-32:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/Users/kegh/.gradle/caches/transforms-3/26704777f4d1a769b7352b833b29ea1f/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/Users/kegh/.gradle/caches/transforms-3/37b0662a3478752fe8054c5f7c16cfbb/transformed/core-1.12.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.vivo.chat.weight.refresh.smartrefresh.refresh-layout-mergeReleaseResources-30:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/Users/kegh/.gradle/caches/transforms-3/26704777f4d1a769b7352b833b29ea1f/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/Users/kegh/.gradle/caches/transforms-3/37b0662a3478752fe8054c5f7c16cfbb/transformed/core-1.12.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                }
+            ]
+        }
+    ]
+}

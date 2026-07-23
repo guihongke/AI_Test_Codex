@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 7.4.2" type="incidents">
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 23">
+        <fix-data conditional="true"/>
+        <location
+            file="${:refresh-layout*debug*sourceProvider*0*javaDir*0}/com/vivo/chat/weight/refresh/smartrefresh/header/material/VCircleImageView.java"
+            line="64"
+            column="13"
+            startOffset="2367"
+            endLine="64"
+            endColumn="51"
+            endOffset="2405"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is never &lt; 23">
+        <fix-data conditional="false"/>
+        <location
+            file="${:refresh-layout*debug*sourceProvider*0*javaDir*0}/com/vivo/chat/weight/refresh/smartrefresh/header/material/VCircleImageView.java"
+            line="85"
+            column="13"
+            startOffset="3352"
+            endLine="85"
+            endColumn="39"
+            endOffset="3378"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.annotation:annotation than 1.6.0 is available: 1.10.0">
+        <fix-replace
+            description="Change to 1.10.0"
+            family="Update versions"
+            oldString="1.6.0"
+            replacement="1.10.0"/>
+        <location
+            file="${:refresh-layout*projectDir}/build.gradle"
+            line="29"
+            column="9"
+            startOffset="589"
+            endLine="29"
+            endColumn="47"
+            endOffset="627"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core than 1.12.0 is available: 1.19.0">
+        <fix-replace
+            description="Change to 1.19.0"
+            family="Update versions"
+            oldString="1.12.0"
+            replacement="1.19.0"/>
+        <location
+            file="${:refresh-layout*projectDir}/build.gradle"
+            line="30"
+            column="9"
+            startOffset="636"
+            endLine="30"
+            endColumn="36"
+            endOffset="663"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.recyclerview:recyclerview than 1.3.2 is available: 1.4.0">
+        <fix-replace
+            description="Change to 1.4.0"
+            family="Update versions"
+            oldString="1.3.2"
+            replacement="1.4.0"/>
+        <location
+            file="${:refresh-layout*projectDir}/build.gradle"
+            line="31"
+            column="9"
+            startOffset="672"
+            endLine="31"
+            endColumn="51"
+            endOffset="714"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.coordinatorlayout:coordinatorlayout than 1.2.0 is available: 1.3.0">
+        <fix-replace
+            description="Change to 1.3.0"
+            family="Update versions"
+            oldString="1.2.0"
+            replacement="1.3.0"/>
+        <location
+            file="${:refresh-layout*projectDir}/build.gradle"
+            line="32"
+            column="20"
+            startOffset="734"
+            endLine="32"
+            endColumn="72"
+            endOffset="786"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.fragment:fragment than 1.6.2 is available: 1.8.9">
+        <fix-replace
+            description="Change to 1.8.9"
+            family="Update versions"
+            oldString="1.6.2"
+            replacement="1.8.9"/>
+        <location
+            file="${:refresh-layout*projectDir}/build.gradle"
+            line="33"
+            column="20"
+            startOffset="806"
+            endLine="33"
+            endColumn="54"
+            endOffset="840"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.viewpager:viewpager than 1.0.0 is available: 1.1.0">
+        <fix-replace
+            description="Change to 1.1.0"
+            family="Update versions"
+            oldString="1.0.0"
+            replacement="1.1.0"/>
+        <location
+            file="${:refresh-layout*projectDir}/build.gradle"
+            line="35"
+            column="20"
+            startOffset="922"
+            endLine="35"
+            endColumn="56"
+            endOffset="958"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.viewpager2:viewpager2 than 1.0.0 is available: 1.1.0">
+        <fix-replace
+            description="Change to 1.1.0"
+            family="Update versions"
+            oldString="1.0.0"
+            replacement="1.1.0"/>
+        <location
+            file="${:refresh-layout*projectDir}/build.gradle"
+            line="36"
+            column="20"
+            startOffset="978"
+            endLine="36"
+            endColumn="58"
+            endOffset="1016"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.14.0">
+        <fix-replace
+            description="Change to 1.14.0"
+            family="Update versions"
+            oldString="1.11.0"
+            replacement="1.14.0"/>
+        <location
+            file="${:refresh-layout*projectDir}/build.gradle"
+            line="37"
+            column="20"
+            startOffset="1036"
+            endLine="37"
+            endColumn="65"
+            endOffset="1081"/>
+    </incident>
+
+</incidents>

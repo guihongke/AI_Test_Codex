@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Modified from SmartRefreshLayout 2.1.1 for the Vivo-prefixed AndroidX fork. -->
+<resources>
+
+    <declare-styleable name="VMaterialHeader">
+        <attr name="mhPrimaryColor" format="color" />
+        <attr name="mhShadowColor" format="color" />
+        <attr name="mhShadowRadius" format="dimension"/>
+        <attr name="mhShowBezierWave" format="boolean"/>
+        <attr name="mhScrollableWhenRefreshing" format="boolean"/>
+
+        <attr name="srlPrimaryColor" />
+        <attr name="srlShadowColor" format="color" />
+        <attr name="srlShadowRadius" format="dimension"/>
+        <attr name="srlShowBezierWave" format="boolean"/>
+        <attr name="srlScrollableWhenRefreshing" format="boolean"/>
+    </declare-styleable>
+
+</resources>

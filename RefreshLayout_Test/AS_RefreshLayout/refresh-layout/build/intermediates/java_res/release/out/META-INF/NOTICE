@@ -1,0 +1,9 @@
+This module contains a modified source fork of SmartRefreshLayout 2.1.1.
+
+Original project: https://github.com/scwang90/SmartRefreshLayout
+Original author: scwang
+License: Apache License 2.0
+
+Local modifications include AndroidX migration, package relocation to
+com.vivo.chat.weight.refresh.smartrefresh, V-prefixed public types, selected
+upstream bug fixes, and RecyclerView/header convenience components.

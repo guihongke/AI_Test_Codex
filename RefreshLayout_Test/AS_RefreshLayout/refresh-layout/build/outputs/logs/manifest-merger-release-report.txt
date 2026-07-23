@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml:2:1-13
+INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml:2:1-13
+INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml:2:1-13
+	package
+		INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml
+		ADDED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml:2:1-13
+		INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml:2:1-13
+uses-sdk
+INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml
+INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml
+INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml
+INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml
+		ADDED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml
+		INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml
+		ADDED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml
+		INJECTED from /Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/AndroidManifest.xml

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RefreshLayoutApp</string>
+    <string name="page_title">刷新列表示例</string>
+    <string name="list_header">这是一个header</string>
+</resources>

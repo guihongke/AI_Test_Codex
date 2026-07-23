@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res"/><source path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/build/generated/res/rs/debug"/><source path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res"><file name="srl_classics_footer" path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/layout/srl_classics_footer.xml" qualifiers="" type="layout"/><file name="srl_classics_header" path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/layout/srl_classics_header.xml" qualifiers="" type="layout"/><file path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/values/attrs_classics_footer.xml" qualifiers=""><declare-styleable name="VClassicsFooter">
+        <attr name="srlClassicsSpinnerStyle"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr name="srlFinishDuration"/>
+        <attr name="srlTextSizeTitle"/>
+        <attr name="srlDrawableArrow"/>
+        <attr name="srlDrawableProgress"/>
+        <attr name="srlDrawableMarginRight"/>
+        <attr name="srlDrawableSize"/>
+        <attr name="srlDrawableArrowSize"/>
+        <attr name="srlDrawableProgressSize"/>
+
+        <attr name="srlTextPulling"/>
+        <attr name="srlTextRelease"/>
+        <attr name="srlTextLoading"/>
+        <attr name="srlTextRefreshing"/>
+        <attr name="srlTextFinish"/>
+        <attr name="srlTextFailed"/>
+        <attr name="srlTextNothing"/>
+
+    </declare-styleable></file><file path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/values/strings_kernel.xml" qualifiers=""><string name="srl_content_empty">The content view in SmartRefreshLayout is empty. Do you forget to add it in xml layout file?</string><string formatted="false" name="srl_component_falsify">%s falsify area,\n Represents the height[%.1fdp] of drag at run time,\n It does not show anything.</string></file><file path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/values/attrs_material_header.xml" qualifiers=""><declare-styleable name="VMaterialHeader">
+        <attr format="color" name="mhPrimaryColor"/>
+        <attr format="color" name="mhShadowColor"/>
+        <attr format="dimension" name="mhShadowRadius"/>
+        <attr format="boolean" name="mhShowBezierWave"/>
+        <attr format="boolean" name="mhScrollableWhenRefreshing"/>
+
+        <attr name="srlPrimaryColor"/>
+        <attr format="color" name="srlShadowColor"/>
+        <attr format="dimension" name="srlShadowRadius"/>
+        <attr format="boolean" name="srlShowBezierWave"/>
+        <attr format="boolean" name="srlScrollableWhenRefreshing"/>
+    </declare-styleable></file><file path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/values/attrs_classics_header.xml" qualifiers=""><declare-styleable name="VClassicsHeader">
+        <attr name="srlClassicsSpinnerStyle"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr name="srlFinishDuration"/>
+        <attr name="srlDrawableArrow"/>
+        <attr name="srlDrawableProgress"/>
+        <attr name="srlDrawableMarginRight"/>
+        <attr name="srlDrawableSize"/>
+        <attr name="srlDrawableArrowSize"/>
+        <attr name="srlDrawableProgressSize"/>
+        <attr name="srlTextSizeTitle"/>
+        <attr name="srlTextSizeTime"/>
+        <attr format="dimension" name="srlTextTimeMarginTop"/>
+        <attr format="boolean" name="srlEnableLastTime"/>
+
+        <attr name="srlTextPulling"/>
+        <attr name="srlTextLoading"/>
+        <attr name="srlTextRelease"/>
+        <attr name="srlTextFinish"/>
+        <attr name="srlTextFailed"/>
+        <attr name="srlTextUpdate"/>
+        <attr name="srlTextSecondary"/>
+        <attr name="srlTextRefreshing"/>
+
+    </declare-styleable></file><file path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/values/strings_classics_footer.xml" qualifiers=""><string name="srl_footer_pulling">Pull Up To Load More</string><string name="srl_footer_release">Release To Load More</string><string name="srl_footer_loading">Loading…</string><string name="srl_footer_refreshing">Wait For Refreshing…</string><string name="srl_footer_finish">Load Success</string><string name="srl_footer_failed">Load Failed</string><string name="srl_footer_nothing">No More Data</string></file><file path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/values/strings_classics_header.xml" qualifiers=""><string name="srl_header_pulling">Pull Down To Refresh</string><string name="srl_header_release">Release To Refresh</string><string name="srl_header_refreshing">Refreshing…</string><string name="srl_header_loading">Wait For Loading…</string><string name="srl_header_finish">Refresh Success</string><string name="srl_header_failed">Refresh Failed</string><string name="srl_header_update">\'Last Update\' M-d HH:mm</string><string name="srl_header_secondary">Release To Second Floor</string></file><file path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/values/ids.xml" qualifiers=""><item name="srl_tag" type="id"/></file><file path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/values/attrs_kernel.xml" qualifiers=""><attr format="reference" name="srlStyle"/><attr format="dimension" name="srlDrawableSize"/><attr format="dimension" name="srlDrawableArrowSize"/><attr format="dimension" name="srlDrawableProgressSize"/><attr format="dimension" name="srlDrawableMarginRight"/><attr format="dimension" name="srlTextSizeTitle"/><attr format="dimension" name="srlTextSizeTime"/><attr format="integer" name="srlFinishDuration"/><attr format="color" name="srlPrimaryColor"/><attr format="color" name="srlAccentColor"/><attr format="reference" name="srlDrawableArrow"/><attr format="reference" name="srlDrawableProgress"/><attr format="boolean" name="srlEnableHorizontalDrag"/><attr format="string" name="srlTextPulling"/><attr format="string" name="srlTextLoading"/><attr format="string" name="srlTextRelease"/><attr format="string" name="srlTextFinish"/><attr format="string" name="srlTextFailed"/><attr format="string" name="srlTextUpdate"/><attr format="string" name="srlTextSecondary"/><attr format="string" name="srlTextRefreshing"/><attr format="string" name="srlTextNothing"/><attr format="enum" name="srlClassicsSpinnerStyle">
+        <enum name="Translate" value="0"/>
+        <enum name="Scale" value="1"/>
+        <enum name="FixedBehind" value="2"/>
+    </attr><attr format="enum" name="layout_srlSpinnerStyle">
+        <enum name="Translate" value="0"/>
+        <enum name="Scale" value="1"/>
+        <enum name="FixedBehind" value="2"/>
+        <enum name="FixedFront" value="3"/>
+        <enum name="MatchLayout" value="4"/>
+    </attr><declare-styleable name="VSmartRefreshLayout">
+        
+        
+        
+        <attr name="android:clipChildren"/>
+        <attr name="android:clipToPadding"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr format="integer" name="srlReboundDuration"/>
+        <attr format="dimension" name="srlHeaderHeight"/>
+        <attr format="dimension" name="srlFooterHeight"/>
+        <attr format="dimension" name="srlHeaderInsetStart"/>
+        <attr format="dimension" name="srlFooterInsetStart"/>
+        <attr format="float" name="srlDragRate"/>
+        <attr format="float" name="srlHeaderMaxDragRate"/>
+        <attr format="float" name="srlFooterMaxDragRate"/>
+        <attr format="float" name="srlHeaderTriggerRate"/>
+        <attr format="float" name="srlFooterTriggerRate"/>
+        <attr format="boolean" name="srlEnableRefresh"/>
+        <attr format="boolean" name="srlEnableLoadMore"/>
+        <attr format="boolean" name="srlEnableHeaderTranslationContent"/>
+        <attr format="boolean" name="srlEnableFooterTranslationContent"/>
+        <attr format="reference" name="srlHeaderTranslationViewId"/>
+        <attr format="reference" name="srlFooterTranslationViewId"/>
+        <attr format="boolean" name="srlEnablePreviewInEditMode"/>
+        <attr format="boolean" name="srlEnableAutoLoadMore"/>
+        <attr format="boolean" name="srlEnableOverScrollBounce"/>
+        <attr format="boolean" name="srlEnablePureScrollMode"/>
+        <attr format="boolean" name="srlEnableNestedScrolling"/>
+        <attr format="boolean" name="srlEnableScrollContentWhenLoaded"/>
+        <attr format="boolean" name="srlEnableScrollContentWhenRefreshed"/>
+        <attr format="boolean" name="srlEnableLoadMoreWhenContentNotFull"/>
+        <attr format="boolean" name="srlEnableFooterFollowWhenLoadFinished"/>
+        <attr format="boolean" name="srlEnableFooterFollowWhenNoMoreData"/>
+        <attr format="boolean" name="srlEnableClipHeaderWhenFixedBehind"/>
+        <attr format="boolean" name="srlEnableClipFooterWhenFixedBehind"/>
+        <attr format="boolean" name="srlEnableOverScrollDrag"/>
+        <attr format="boolean" name="srlDisableContentWhenRefresh"/>
+        <attr format="boolean" name="srlDisableContentWhenLoading"/>
+        <attr format="reference" name="srlFixedHeaderViewId"/>
+        <attr format="reference" name="srlFixedFooterViewId"/>
+    </declare-styleable><style name="VSmartRefreshStyle">
+        <item name="srlPrimaryColor">@android:color/holo_blue_dark</item>
+        <item name="srlAccentColor">@android:color/white</item>
+        <item name="srlReboundDuration">300</item>
+        <item name="srlHeaderHeight">100dp</item>
+        <item name="srlFooterHeight">60dp</item>
+        <item name="srlHeaderInsetStart">0dp</item>
+        <item name="srlFooterInsetStart">0dp</item>
+        <item name="srlDragRate">0.5</item>
+        <item name="srlHeaderMaxDragRate">2.5</item>
+        <item name="srlFooterMaxDragRate">2.5</item>
+        <item name="srlHeaderTriggerRate">1</item>
+        <item name="srlFooterTriggerRate">1</item>
+        
+        
+        
+        
+        
+        
+        <item name="srlEnablePreviewInEditMode">true</item>
+        <item name="srlEnableAutoLoadMore">true</item>
+        <item name="srlEnableOverScrollDrag">false</item>
+        <item name="srlEnableOverScrollBounce">true</item>
+        <item name="srlEnablePureScrollMode">false</item>
+        <item name="srlEnableNestedScrolling">true</item>
+        <item name="srlEnableScrollContentWhenLoaded">true</item>
+        <item name="srlEnableScrollContentWhenRefreshed">true</item>
+        <item name="srlEnableLoadMoreWhenContentNotFull">true</item>
+        
+        <item name="srlEnableFooterFollowWhenNoMoreData">false</item>
+        <item name="srlEnableClipHeaderWhenFixedBehind">true</item>
+        <item name="srlEnableClipFooterWhenFixedBehind">true</item>
+        <item name="srlDisableContentWhenRefresh">false</item>
+        <item name="srlDisableContentWhenLoading">false</item>
+        
+        
+    </style><declare-styleable name="VSmartRefreshLayout_Layout">
+        <attr name="layout_srlSpinnerStyle"/>
+        <attr format="color" name="layout_srlBackgroundColor"/>
+    </declare-styleable></file><file path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/values-zh/strings_kernel.xml" qualifiers="zh"><string name="srl_content_empty">SmartRefreshLayout中没有找到内容视图。您是否忘记在xml布局文件中添加？</string><string formatted="false" name="srl_component_falsify">%s 虚假区域\n代表运行时拖动的高度【%.1fdp】 \n而不会显示任何东西</string></file><file path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/values-zh/strings_classics_footer.xml" qualifiers="zh"><string name="srl_footer_pulling">上拉加载更多</string><string name="srl_footer_release">释放立即加载</string><string name="srl_footer_loading">正在加载…</string><string name="srl_footer_refreshing">等待头部刷新完成…</string><string name="srl_footer_finish">加载完成</string><string name="srl_footer_failed">加载失败</string><string name="srl_footer_nothing">没有更多数据了</string></file><file path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/main/res/values-zh/strings_classics_header.xml" qualifiers="zh"><string name="srl_header_pulling">下拉可以刷新</string><string name="srl_header_refreshing">正在刷新…</string><string name="srl_header_loading">等待底部加载完成…</string><string name="srl_header_release">释放立即刷新</string><string name="srl_header_finish">刷新完成</string><string name="srl_header_failed">刷新失败</string><string name="srl_header_update">上次更新 M-d HH:mm</string><string name="srl_header_secondary">释放进入二楼</string></file></source><source path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/build/generated/res/rs/debug"/><source path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/build/generated/res/resValues/debug"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/kegh/Documents/Codex/RefreshLayout_Test/AS_RefreshLayout/refresh-layout/src/debug/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><mergedItems><configuration qualifiers=""><declare-styleable name="MaterialHeader">
+        <attr format="color" name="mhPrimaryColor"/>
+        <attr format="color" name="mhShadowColor"/>
+        <attr format="dimension" name="mhShadowRadius"/>
+        <attr format="boolean" name="mhShowBezierWave"/>
+        <attr format="boolean" name="mhScrollableWhenRefreshing"/>
+
+        <attr name="srlPrimaryColor"/>
+        <attr format="color" name="srlShadowColor"/>
+        <attr format="dimension" name="srlShadowRadius"/>
+        <attr format="boolean" name="srlShowBezierWave"/>
+        <attr format="boolean" name="srlScrollableWhenRefreshing"/>
+    </declare-styleable><declare-styleable name="VSmartRefreshLayout">
+        
+        
+        
+        <attr name="android:clipChildren"/>
+        <attr name="android:clipToPadding"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr format="integer" name="srlReboundDuration"/>
+        <attr format="dimension" name="srlHeaderHeight"/>
+        <attr format="dimension" name="srlFooterHeight"/>
+        <attr format="dimension" name="srlHeaderInsetStart"/>
+        <attr format="dimension" name="srlFooterInsetStart"/>
+        <attr format="float" name="srlDragRate"/>
+        <attr format="float" name="srlHeaderMaxDragRate"/>
+        <attr format="float" name="srlFooterMaxDragRate"/>
+        <attr format="float" name="srlHeaderTriggerRate"/>
+        <attr format="float" name="srlFooterTriggerRate"/>
+        <attr format="boolean" name="srlEnableRefresh"/>
+        <attr format="boolean" name="srlEnableLoadMore"/>
+        <attr format="boolean" name="srlEnableHeaderTranslationContent"/>
+        <attr format="boolean" name="srlEnableFooterTranslationContent"/>
+        <attr format="reference" name="srlHeaderTranslationViewId"/>
+        <attr format="reference" name="srlFooterTranslationViewId"/>
+        <attr format="boolean" name="srlEnablePreviewInEditMode"/>
+        <attr format="boolean" name="srlEnableAutoLoadMore"/>
+        <attr format="boolean" name="srlEnableOverScrollBounce"/>
+        <attr format="boolean" name="srlEnablePureScrollMode"/>
+        <attr format="boolean" name="srlEnableNestedScrolling"/>
+        <attr format="boolean" name="srlEnableScrollContentWhenLoaded"/>
+        <attr format="boolean" name="srlEnableScrollContentWhenRefreshed"/>
+        <attr format="boolean" name="srlEnableLoadMoreWhenContentNotFull"/>
+        <attr format="boolean" name="srlEnableFooterFollowWhenLoadFinished"/>
+        <attr format="boolean" name="srlEnableFooterFollowWhenNoMoreData"/>
+        <attr format="boolean" name="srlEnableClipHeaderWhenFixedBehind"/>
+        <attr format="boolean" name="srlEnableClipFooterWhenFixedBehind"/>
+        <attr format="boolean" name="srlEnableOverScrollDrag"/>
+        <attr format="boolean" name="srlDisableContentWhenRefresh"/>
+        <attr format="boolean" name="srlDisableContentWhenLoading"/>
+        <attr format="reference" name="srlFixedHeaderViewId"/>
+        <attr format="reference" name="srlFixedFooterViewId"/>
+    </declare-styleable><declare-styleable name="ClassicsHeader">
+        <attr name="srlClassicsSpinnerStyle"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr name="srlFinishDuration"/>
+        <attr name="srlDrawableArrow"/>
+        <attr name="srlDrawableProgress"/>
+        <attr name="srlDrawableMarginRight"/>
+        <attr name="srlDrawableSize"/>
+        <attr name="srlDrawableArrowSize"/>
+        <attr name="srlDrawableProgressSize"/>
+        <attr name="srlTextSizeTitle"/>
+        <attr name="srlTextSizeTime"/>
+        <attr format="dimension" name="srlTextTimeMarginTop"/>
+        <attr format="boolean" name="srlEnableLastTime"/>
+
+        <attr name="srlTextPulling"/>
+        <attr name="srlTextLoading"/>
+        <attr name="srlTextRelease"/>
+        <attr name="srlTextFinish"/>
+        <attr name="srlTextFailed"/>
+        <attr name="srlTextUpdate"/>
+        <attr name="srlTextSecondary"/>
+        <attr name="srlTextRefreshing"/>
+
+    </declare-styleable><declare-styleable name="SmartRefreshLayout">
+        
+        
+        
+        <attr name="android:clipChildren"/>
+        <attr name="android:clipToPadding"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr format="integer" name="srlReboundDuration"/>
+        <attr format="dimension" name="srlHeaderHeight"/>
+        <attr format="dimension" name="srlFooterHeight"/>
+        <attr format="dimension" name="srlHeaderInsetStart"/>
+        <attr format="dimension" name="srlFooterInsetStart"/>
+        <attr format="float" name="srlDragRate"/>
+        <attr format="float" name="srlHeaderMaxDragRate"/>
+        <attr format="float" name="srlFooterMaxDragRate"/>
+        <attr format="float" name="srlHeaderTriggerRate"/>
+        <attr format="float" name="srlFooterTriggerRate"/>
+        <attr format="boolean" name="srlEnableRefresh"/>
+        <attr format="boolean" name="srlEnableLoadMore"/>
+        <attr format="boolean" name="srlEnableHeaderTranslationContent"/>
+        <attr format="boolean" name="srlEnableFooterTranslationContent"/>
+        <attr format="reference" name="srlHeaderTranslationViewId"/>
+        <attr format="reference" name="srlFooterTranslationViewId"/>
+        <attr format="boolean" name="srlEnablePreviewInEditMode"/>
+        <attr format="boolean" name="srlEnableAutoLoadMore"/>
+        <attr format="boolean" name="srlEnableOverScrollBounce"/>
+        <attr format="boolean" name="srlEnablePureScrollMode"/>
+        <attr format="boolean" name="srlEnableNestedScrolling"/>
+        <attr format="boolean" name="srlEnableScrollContentWhenLoaded"/>
+        <attr format="boolean" name="srlEnableScrollContentWhenRefreshed"/>
+        <attr format="boolean" name="srlEnableLoadMoreWhenContentNotFull"/>
+        <attr format="boolean" name="srlEnableFooterFollowWhenLoadFinished"/>
+        <attr format="boolean" name="srlEnableFooterFollowWhenNoMoreData"/>
+        <attr format="boolean" name="srlEnableClipHeaderWhenFixedBehind"/>
+        <attr format="boolean" name="srlEnableClipFooterWhenFixedBehind"/>
+        <attr format="boolean" name="srlEnableOverScrollDrag"/>
+        <attr format="boolean" name="srlDisableContentWhenRefresh"/>
+        <attr format="boolean" name="srlDisableContentWhenLoading"/>
+        <attr format="reference" name="srlFixedHeaderViewId"/>
+        <attr format="reference" name="srlFixedFooterViewId"/>
+    </declare-styleable><declare-styleable name="VMaterialHeader">
+        <attr format="color" name="mhPrimaryColor"/>
+        <attr format="color" name="mhShadowColor"/>
+        <attr format="dimension" name="mhShadowRadius"/>
+        <attr format="boolean" name="mhShowBezierWave"/>
+        <attr format="boolean" name="mhScrollableWhenRefreshing"/>
+
+        <attr name="srlPrimaryColor"/>
+        <attr format="color" name="srlShadowColor"/>
+        <attr format="dimension" name="srlShadowRadius"/>
+        <attr format="boolean" name="srlShowBezierWave"/>
+        <attr format="boolean" name="srlScrollableWhenRefreshing"/>
+    </declare-styleable><declare-styleable name="SmartRefreshLayout_Layout">
+        <attr name="layout_srlSpinnerStyle"/>
+        <attr format="color" name="layout_srlBackgroundColor"/>
+    </declare-styleable><declare-styleable name="VClassicsHeader">
+        <attr name="srlClassicsSpinnerStyle"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr name="srlFinishDuration"/>
+        <attr name="srlDrawableArrow"/>
+        <attr name="srlDrawableProgress"/>
+        <attr name="srlDrawableMarginRight"/>
+        <attr name="srlDrawableSize"/>
+        <attr name="srlDrawableArrowSize"/>
+        <attr name="srlDrawableProgressSize"/>
+        <attr name="srlTextSizeTitle"/>
+        <attr name="srlTextSizeTime"/>
+        <attr format="dimension" name="srlTextTimeMarginTop"/>
+        <attr format="boolean" name="srlEnableLastTime"/>
+
+        <attr name="srlTextPulling"/>
+        <attr name="srlTextLoading"/>
+        <attr name="srlTextRelease"/>
+        <attr name="srlTextFinish"/>
+        <attr name="srlTextFailed"/>
+        <attr name="srlTextUpdate"/>
+        <attr name="srlTextSecondary"/>
+        <attr name="srlTextRefreshing"/>
+
+    </declare-styleable><declare-styleable name="VClassicsFooter">
+        <attr name="srlClassicsSpinnerStyle"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr name="srlFinishDuration"/>
+        <attr name="srlTextSizeTitle"/>
+        <attr name="srlDrawableArrow"/>
+        <attr name="srlDrawableProgress"/>
+        <attr name="srlDrawableMarginRight"/>
+        <attr name="srlDrawableSize"/>
+        <attr name="srlDrawableArrowSize"/>
+        <attr name="srlDrawableProgressSize"/>
+
+        <attr name="srlTextPulling"/>
+        <attr name="srlTextRelease"/>
+        <attr name="srlTextLoading"/>
+        <attr name="srlTextRefreshing"/>
+        <attr name="srlTextFinish"/>
+        <attr name="srlTextFailed"/>
+        <attr name="srlTextNothing"/>
+
+    </declare-styleable><declare-styleable name="VSmartRefreshLayout_Layout">
+        <attr name="layout_srlSpinnerStyle"/>
+        <attr format="color" name="layout_srlBackgroundColor"/>
+    </declare-styleable><declare-styleable name="ClassicsFooter">
+        <attr name="srlClassicsSpinnerStyle"/>
+        <attr name="srlPrimaryColor"/>
+        <attr name="srlAccentColor"/>
+        <attr name="srlFinishDuration"/>
+        <attr name="srlTextSizeTitle"/>
+        <attr name="srlDrawableArrow"/>
+        <attr name="srlDrawableProgress"/>
+        <attr name="srlDrawableMarginRight"/>
+        <attr name="srlDrawableSize"/>
+        <attr name="srlDrawableArrowSize"/>
+        <attr name="srlDrawableProgressSize"/>
+
+        <attr name="srlTextPulling"/>
+        <attr name="srlTextRelease"/>
+        <attr name="srlTextLoading"/>
+        <attr name="srlTextRefreshing"/>
+        <attr name="srlTextFinish"/>
+        <attr name="srlTextFailed"/>
+        <attr name="srlTextNothing"/>
+
+    </declare-styleable></configuration></mergedItems></merger>
