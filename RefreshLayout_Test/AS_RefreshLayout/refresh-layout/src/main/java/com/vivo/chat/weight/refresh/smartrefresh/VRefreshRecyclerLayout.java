@@ -10,7 +10,12 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-/** VSmartRefreshLayout convenience container with ListView-style RecyclerView headers. */
+/**
+ * 带 RecyclerView Header 能力的刷新容器。
+ *
+ * <p>刷新 Header/Footer 仍由父类管理；列表 Header 则通过 ConcatAdapter 插入数据
+ * Adapter 之前，两者是完全不同的概念。</p>
+ */
 public class VRefreshRecyclerLayout extends VSmartRefreshLayout {
 
     private final VHeaderViewAdapter headerViewAdapter = new VHeaderViewAdapter();
@@ -40,6 +45,10 @@ public class VRefreshRecyclerLayout extends VSmartRefreshLayout {
         resolveRecyclerView();
     }
 
+    /**
+     * 设置业务数据 Adapter，并自动在它前面拼接列表 Header Adapter。
+     * 请使用本方法代替 recyclerView.setAdapter()，否则 addHeaderView 不会生效。
+     */
     public void setAdapter(@NonNull RecyclerView.Adapter<?> adapter) {
         dataAdapter = adapter;
         concatAdapter = new ConcatAdapter(
@@ -53,19 +62,26 @@ public class VRefreshRecyclerLayout extends VSmartRefreshLayout {
         getRecyclerView().setAdapter(concatAdapter);
     }
 
+    /** 添加一个随 RecyclerView 内容滚动的 Header View。重复添加同一实例会被忽略。 */
     public void addHeaderView(@NonNull View view) {
         headerViewAdapter.addHeaderView(view);
     }
 
+    /** 删除指定 Header View；找到并删除时返回 true。 */
     public boolean removeHeaderView(@NonNull View view) {
         return headerViewAdapter.removeHeaderView(view);
     }
 
+    /** 返回业务数据 Adapter，不包含内部 Header Adapter。 */
     @Nullable
     public RecyclerView.Adapter<?> getDataAdapter() {
         return dataAdapter;
     }
 
+    /**
+     * 返回 XML 内容区域中的 RecyclerView。
+     * 若子树中不存在 RecyclerView，会抛出 IllegalStateException 以尽早暴露布局错误。
+     */
     @NonNull
     public RecyclerView getRecyclerView() {
         resolveRecyclerView();
@@ -85,6 +101,7 @@ public class VRefreshRecyclerLayout extends VSmartRefreshLayout {
 
     @Nullable
     private RecyclerView findRecyclerView(@NonNull View view) {
+        // 允许 RecyclerView 位于一层或多层内容容器中，而不限制必须是直接子 View。
         if (view instanceof RecyclerView) {
             return (RecyclerView) view;
         }

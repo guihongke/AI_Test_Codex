@@ -14,7 +14,10 @@ import com.vivo.chat.weight.refresh.smartrefresh.api.VRefreshLayout;
 import com.vivo.chat.weight.refresh.smartrefresh.constant.VSpinnerStyle;
 import com.vivo.chat.weight.refresh.smartrefresh.simple.VSimpleComponent;
 
-/** A lightweight load footer whose visible children are declared entirely in XML. */
+/**
+ * 轻量加载 Footer，可见内容由 XML 子 View 决定。
+ * 进入“没有更多数据”状态时会递归隐藏其中的 ProgressBar，避免继续显示转圈动画。
+ */
 public class VProgressFooter extends VSimpleComponent implements VRefreshFooter {
 
     private boolean noMoreData;
@@ -59,6 +62,7 @@ public class VProgressFooter extends VSimpleComponent implements VRefreshFooter 
     }
 
     private void updateProgressVisibility(@NonNull View view) {
+        // 递归查找允许调用方在 ProgressBar 外自由增加容器、文字或占位布局。
         if (view instanceof ProgressBar) {
             view.setVisibility(noMoreData ? INVISIBLE : VISIBLE);
         } else if (view instanceof ViewGroup) {

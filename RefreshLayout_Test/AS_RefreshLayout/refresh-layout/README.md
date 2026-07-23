@@ -14,6 +14,24 @@ dependencies {
 
 模块要求 `minSdk 23`、`targetSdk 34` 和 Java 11。
 
+详细说明见项目根目录的 [`组件介绍.md`](../组件介绍.md) 和
+[`使用文档.md`](../使用文档.md)。前者说明 Layout、状态机、阻尼、回弹及 Header
+Adapter 的设计，后者包含完整业务 API、XML 属性和接入示例。
+
+## Demo
+
+运行 `app` 模块后，首页是与 SmartRefreshLayout 示例工程相同思路的 Demo 目录，
+点击条目进入独立效果页：
+
+- XML 定义的 `VProgressHeader` / `VProgressFooter`
+- `VClassicsHeader` / `VClassicsFooter`
+- `VMaterialHeader` / `VClassicsFooter`
+
+每个效果页都可以测试自动刷新、下拉刷新、上拉加载、下一次请求失败、重置和
+无更多数据；列表数据由本地 Mock，并通过 XML 定义的 `TextView` 添加
+“这是一个header”。入口代码在 `app/src/main/java/com/kgh/refreshLayout/MainActivity.java`，
+完整用法在 `RefreshDemoActivity.java`。
+
 ## XML Progress Header/Footer
 
 ```xml

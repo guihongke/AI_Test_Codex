@@ -1,68 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/page_background"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="104dp"
+        android:background="@color/catalog_header"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/catalog_title"
+            android:textColor="@color/catalog_header_text"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/catalog_subtitle"
+            android:textColor="@color/catalog_header_secondary"
+            android:textSize="14sp" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/surface"
+        android:layout_height="44dp"
         android:gravity="center_vertical"
         android:paddingHorizontal="20dp"
-        android:text="@string/page_title"
-        android:textColor="@color/text_primary"
-        android:textSize="20sp"
+        android:text="@string/catalog_section_styles"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
         android:textStyle="bold" />
 
-    <com.vivo.chat.weight.refresh.smartrefresh.VRefreshRecyclerLayout
-        android:id="@+id/refreshLayout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/demoList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        app:srlEnableAutoLoadMore="true"
-        app:srlEnableLoadMore="true">
-
-        <com.vivo.chat.weight.refresh.smartrefresh.header.VProgressHeader
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:background="@color/page_background">
-
-            <ProgressBar
-                android:id="@+id/topRefreshProgress"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_centerInParent="true"
-                android:indeterminate="true"
-                android:indeterminateTint="@color/refresh_accent" />
-        </com.vivo.chat.weight.refresh.smartrefresh.header.VProgressHeader>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/page_background"
-            android:clipToPadding="false"
-            android:overScrollMode="never"
-            android:paddingBottom="12dp" />
-
-        <com.vivo.chat.weight.refresh.smartrefresh.footer.VProgressFooter
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:background="@color/page_background">
-
-            <ProgressBar
-                android:id="@+id/bottomLoadProgress"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_centerInParent="true"
-                android:indeterminate="true"
-                android:indeterminateTint="@color/load_accent" />
-        </com.vivo.chat.weight.refresh.smartrefresh.footer.VProgressFooter>
-
-    </com.vivo.chat.weight.refresh.smartrefresh.VRefreshRecyclerLayout>
+        android:background="@color/surface"
+        android:clipToPadding="false"
+        android:overScrollMode="never" />
 
 </LinearLayout>

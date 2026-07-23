@@ -2,4 +2,20 @@
     <string name="app_name">RefreshLayoutApp</string>
     <string name="page_title">刷新列表示例</string>
     <string name="list_header">这是一个header</string>
+    <string name="catalog_title">VSmartRefreshLayout Demo</string>
+    <string name="catalog_subtitle">示例、样式与状态</string>
+    <string name="catalog_section_styles">刷新样式</string>
+    <string name="demo_xml_title">XML Progress</string>
+    <string name="demo_xml_summary">XML Header / Footer · RecyclerView Header</string>
+    <string name="demo_classics_title">Classics</string>
+    <string name="demo_classics_summary">VClassicsHeader · VClassicsFooter</string>
+    <string name="demo_material_title">Material</string>
+    <string name="demo_material_summary">VMaterialHeader · VClassicsFooter</string>
+    <string name="open_demo">打开示例</string>
+    <string name="action_auto_refresh">自动刷新</string>
+    <string name="action_fail_next">下次失败</string>
+    <string name="action_reset">重置</string>
+    <string name="demo_state_format">状态 %1$s　·　第 %2$d/%3$d 页</string>
+    <string name="demo_drag_rate_default">阻尼 0.50</string>
+    <string name="demo_drag_rate_format">阻尼 %.2f</string>
 </resources>

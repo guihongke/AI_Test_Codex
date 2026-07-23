@@ -7,4 +7,13 @@
     <color name="load_accent">#00897B</color>
     <color name="header_background">#E8F0FE</color>
     <color name="header_text">#174EA6</color>
+    <color name="text_secondary">#5F6368</color>
+    <color name="catalog_header">#173B57</color>
+    <color name="catalog_header_text">#FFFFFF</color>
+    <color name="catalog_header_secondary">#C7D9E7</color>
+    <color name="status_background">#E7F3EE</color>
+    <color name="status_text">#176B4D</color>
+    <color name="control_secondary">#E8EAED</color>
+    <color name="material_wave">#2F7D67</color>
+    <color name="demo_warning">#D97706</color>
 </resources>

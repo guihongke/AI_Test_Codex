@@ -66,6 +66,7 @@ final class VHeaderViewAdapter extends RecyclerView.Adapter<VHeaderViewAdapter.V
 
     @Override
     public void onViewAttachedToWindow(@NonNull VHeaderViewHolder holder) {
+        // 瀑布流中 Header 必须占满所有列，行为才与 ListView.addHeaderView 一致。
         ViewGroup.LayoutParams params = holder.itemView.getLayoutParams();
         if (params instanceof StaggeredGridLayoutManager.LayoutParams) {
             ((StaggeredGridLayoutManager.LayoutParams) params).setFullSpan(true);
@@ -86,6 +87,7 @@ final class VHeaderViewAdapter extends RecyclerView.Adapter<VHeaderViewAdapter.V
     public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
         RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
         if (manager instanceof GridLayoutManager) {
+            // 保留业务原有 SpanSizeLookup，仅让 Header 返回整个 spanCount。
             gridLayoutManager = (GridLayoutManager) manager;
             previousSpanSizeLookup = gridLayoutManager.getSpanSizeLookup();
             headerSpanSizeLookup = new GridLayoutManager.SpanSizeLookup() {

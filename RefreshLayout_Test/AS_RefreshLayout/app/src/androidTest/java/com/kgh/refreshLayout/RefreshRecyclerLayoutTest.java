@@ -3,17 +3,23 @@ package com.kgh.refreshLayout;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import android.content.Intent;
 import android.os.SystemClock;
 import android.view.View;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.test.core.app.ActivityScenario;
+import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.vivo.chat.weight.refresh.smartrefresh.VRefreshRecyclerLayout;
 import com.vivo.chat.weight.refresh.smartrefresh.constant.VRefreshState;
+import com.vivo.chat.weight.refresh.smartrefresh.footer.VClassicsFooter;
 import com.vivo.chat.weight.refresh.smartrefresh.footer.VProgressFooter;
+import com.vivo.chat.weight.refresh.smartrefresh.header.VClassicsHeader;
+import com.vivo.chat.weight.refresh.smartrefresh.header.VMaterialHeader;
 import com.vivo.chat.weight.refresh.smartrefresh.header.VProgressHeader;
 
 import org.junit.Test;
@@ -25,8 +31,41 @@ import java.util.concurrent.atomic.AtomicReference;
 public class RefreshRecyclerLayoutTest {
 
     @Test
-    public void releasingTouchNeverExpandsHeaderAgain() {
+    public void catalogShowsAllDemoEntries() {
         try (ActivityScenario<MainActivity> scenario = ActivityScenario.launch(MainActivity.class)) {
+            scenario.onActivity(activity -> {
+                RecyclerView demoList = activity.findViewById(R.id.demoList);
+                assertEquals(3, demoList.getAdapter().getItemCount());
+            });
+        }
+    }
+
+    @Test
+    public void demoEntriesInstallTheExpectedRefreshComponents() {
+        assertDemoComponents(
+                RefreshDemoActivity.DEMO_XML_PROGRESS,
+                R.string.demo_xml_title,
+                VProgressHeader.class,
+                VProgressFooter.class
+        );
+        assertDemoComponents(
+                RefreshDemoActivity.DEMO_CLASSICS,
+                R.string.demo_classics_title,
+                VClassicsHeader.class,
+                VClassicsFooter.class
+        );
+        assertDemoComponents(
+                RefreshDemoActivity.DEMO_MATERIAL,
+                R.string.demo_material_title,
+                VMaterialHeader.class,
+                VClassicsFooter.class
+        );
+    }
+
+    @Test
+    public void releasingTouchNeverExpandsHeaderAgain() {
+        try (ActivityScenario<RefreshDemoActivity> scenario =
+                     ActivityScenario.launch(RefreshDemoActivity.class)) {
             // Let the demo's initial automatic refresh finish before driving the container directly.
             SystemClock.sleep(1_500L);
 
@@ -95,6 +134,31 @@ public class RefreshRecyclerLayoutTest {
                 if (layout.isRefreshing()) {
                     layout.finishRefresh();
                 }
+            });
+        }
+    }
+
+    private void assertDemoComponents(
+            int demoType,
+            int expectedTitleRes,
+            Class<?> expectedHeaderClass,
+            Class<?> expectedFooterClass
+    ) {
+        Intent intent = new Intent(
+                ApplicationProvider.getApplicationContext(),
+                RefreshDemoActivity.class
+        );
+        intent.putExtra(RefreshDemoActivity.EXTRA_DEMO_TYPE, demoType);
+
+        try (ActivityScenario<RefreshDemoActivity> scenario = ActivityScenario.launch(intent)) {
+            scenario.onActivity(activity -> {
+                VRefreshRecyclerLayout layout = activity.findViewById(R.id.refreshLayout);
+                ActionBar actionBar = activity.getSupportActionBar();
+
+                assertTrue(actionBar != null);
+                assertEquals(activity.getString(expectedTitleRes), actionBar.getTitle());
+                assertTrue(expectedHeaderClass.isInstance(layout.getRefreshHeader()));
+                assertTrue(expectedFooterClass.isInstance(layout.getRefreshFooter()));
             });
         }
     }

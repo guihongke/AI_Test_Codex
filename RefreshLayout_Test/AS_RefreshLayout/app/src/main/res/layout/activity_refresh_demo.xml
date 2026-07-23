@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_background"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/surface"
+        android:elevation="2dp"
+        app:titleTextColor="@color/text_primary" />
+
+    <TextView
+        android:id="@+id/stateText"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@color/status_background"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:textColor="@color/status_text"
+        android:textSize="13sp" />
+
+    <com.vivo.chat.weight.refresh.smartrefresh.VRefreshRecyclerLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:srlEnableAutoLoadMore="true"
+        app:srlEnableLoadMore="true">
+
+        <com.vivo.chat.weight.refresh.smartrefresh.header.VProgressHeader
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/page_background">
+
+            <ProgressBar
+                android:id="@+id/topRefreshProgress"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/refresh_accent" />
+        </com.vivo.chat.weight.refresh.smartrefresh.header.VProgressHeader>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/page_background"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingBottom="12dp" />
+
+        <com.vivo.chat.weight.refresh.smartrefresh.footer.VProgressFooter
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/page_background">
+
+            <ProgressBar
+                android:id="@+id/bottomLoadProgress"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/load_accent" />
+        </com.vivo.chat.weight.refresh.smartrefresh.footer.VProgressFooter>
+
+    </com.vivo.chat.weight.refresh.smartrefresh.VRefreshRecyclerLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/surface"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp">
+
+        <TextView
+            android:id="@+id/dragRateText"
+            android:layout_width="88dp"
+            android:layout_height="wrap_content"
+            android:text="@string/demo_drag_rate_default"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+
+        <SeekBar
+            android:id="@+id/dragRateSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:max="90"
+            android:progress="40"
+            android:progressTint="@color/refresh_accent"
+            android:thumbTint="@color/refresh_accent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/surface"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp">
+
+        <Button
+            android:id="@+id/autoRefreshButton"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/refresh_accent"
+            android:text="@string/action_auto_refresh"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/failNextSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="8dp"
+            android:text="@string/action_fail_next"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/control_secondary"
+            android:text="@string/action_reset"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</LinearLayout>

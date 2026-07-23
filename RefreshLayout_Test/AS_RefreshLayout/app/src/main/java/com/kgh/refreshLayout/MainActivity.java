@@ -1,88 +1,50 @@
 package com.kgh.refreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.LayoutInflater;
-import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.vivo.chat.weight.refresh.smartrefresh.VRefreshRecyclerLayout;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
-
-    private static final int PAGE_SIZE = 15;
-    private static final int MAX_PAGE = 4;
-    private static final long MOCK_DELAY_MS = 700L;
-
-    private final Handler mainHandler = new Handler(Looper.getMainLooper());
-
-    private VRefreshRecyclerLayout refreshLayout;
-    private MockDataAdapter dataAdapter;
-    private int currentPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        refreshLayout = findViewById(R.id.refreshLayout);
-        dataAdapter = new MockDataAdapter();
-
-        refreshLayout.getRecyclerView().setLayoutManager(new LinearLayoutManager(this));
-        refreshLayout.getRecyclerView().setHasFixedSize(true);
-        refreshLayout.setAdapter(dataAdapter);
-
-        View listHeader = LayoutInflater.from(this)
-                .inflate(R.layout.view_list_header, refreshLayout.getRecyclerView(), false);
-        refreshLayout.addHeaderView(listHeader);
-
-        refreshLayout.setOnRefreshListener(layout -> refreshFirstPage());
-        refreshLayout.setOnLoadMoreListener(layout -> loadNextPage());
-        refreshLayout.post(refreshLayout::autoRefresh);
+        // 首页只负责展示样式目录；每个条目进入独立 Activity，便于单独观察状态和动画。
+        RecyclerView demoList = findViewById(R.id.demoList);
+        demoList.setLayoutManager(new LinearLayoutManager(this));
+        demoList.setAdapter(new DemoCatalogAdapter(
+                Arrays.asList(
+                        new DemoCatalogAdapter.Item(
+                                R.string.demo_xml_title,
+                                R.string.demo_xml_summary,
+                                RefreshDemoActivity.DEMO_XML_PROGRESS
+                        ),
+                        new DemoCatalogAdapter.Item(
+                                R.string.demo_classics_title,
+                                R.string.demo_classics_summary,
+                                RefreshDemoActivity.DEMO_CLASSICS
+                        ),
+                        new DemoCatalogAdapter.Item(
+                                R.string.demo_material_title,
+                                R.string.demo_material_summary,
+                                RefreshDemoActivity.DEMO_MATERIAL
+                        )
+                ),
+                this::openDemo
+        ));
     }
 
-    private void refreshFirstPage() {
-        mainHandler.postDelayed(() -> {
-            currentPage = 1;
-            dataAdapter.replaceData(createMockData(currentPage));
-            refreshLayout.setNoMoreData(false);
-            refreshLayout.finishRefresh();
-        }, MOCK_DELAY_MS);
-    }
-
-    private void loadNextPage() {
-        mainHandler.postDelayed(() -> {
-            currentPage++;
-            dataAdapter.appendData(createMockData(currentPage));
-            refreshLayout.finishLoadMore(0, true, currentPage >= MAX_PAGE);
-        }, MOCK_DELAY_MS);
-    }
-
-    @NonNull
-    private List<String> createMockData(int page) {
-        int firstNumber = (page - 1) * PAGE_SIZE + 1;
-        List<String> result = new ArrayList<>(PAGE_SIZE);
-        for (int index = 0; index < PAGE_SIZE; index++) {
-            result.add(String.format(
-                    Locale.CHINA,
-                    "第 %d 条模拟数据",
-                    firstNumber + index
-            ));
-        }
-        return result;
-    }
-
-    @Override
-    protected void onDestroy() {
-        mainHandler.removeCallbacksAndMessages(null);
-        super.onDestroy();
+    private void openDemo(int demoType) {
+        // 通过类型参数复用一套数据逻辑，仅替换 Header/Footer 组件。
+        Intent intent = new Intent(this, RefreshDemoActivity.class);
+        intent.putExtra(RefreshDemoActivity.EXTRA_DEMO_TYPE, demoType);
+        startActivity(intent);
     }
 }
