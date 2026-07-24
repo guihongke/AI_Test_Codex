@@ -98,6 +98,8 @@ public class VSmartRefreshLayout extends ViewGroup implements VRefreshLayout, Ne
     protected float mLastTouchX;//用于实现Header的左右拖动效果
     protected float mLastTouchY;//用于实现多点触摸
     protected float mDragRate = .5f;
+    protected float mHeaderStartTriggerRate = 1f / 3f;
+    protected boolean mHeaderStartNotified;
     protected char mDragDirection = 'n';//拖动的方向 none-n horizontal-h vertical-v
     protected boolean mIsBeingDragged;//是否正在拖动
     protected boolean mSuperDispatchTouchEvent;//父类是否处理触摸事件
@@ -275,6 +277,10 @@ public class VSmartRefreshLayout extends ViewGroup implements VRefreshLayout, Ne
         }
 
         mDragRate = ta.getFloat(R.styleable.VSmartRefreshLayout_srlDragRate, mDragRate);
+        mHeaderStartTriggerRate = Math.max(0f, Math.min(1f, ta.getFloat(
+                R.styleable.VSmartRefreshLayout_srlHeaderStartTriggerRate,
+                mHeaderStartTriggerRate
+        )));
         mHeaderMaxDragRate = ta.getFloat(R.styleable.VSmartRefreshLayout_srlHeaderMaxDragRate, mHeaderMaxDragRate);
         mFooterMaxDragRate = ta.getFloat(R.styleable.VSmartRefreshLayout_srlFooterMaxDragRate, mFooterMaxDragRate);
         mHeaderTriggerRate = ta.getFloat(R.styleable.VSmartRefreshLayout_srlHeaderTriggerRate, mHeaderTriggerRate);
@@ -1678,7 +1684,8 @@ public class VSmartRefreshLayout extends ViewGroup implements VRefreshLayout, Ne
             } else if (mSpinner < 0) {
                 mKernel.animSpinner(0);
             }
-        } else if (mState == VRefreshState.PullDownToRefresh) {
+        } else if (mState == VRefreshState.PullDownToRefresh
+                || mState == VRefreshState.PullDownStarted) {
             mKernel.setState(VRefreshState.PullDownCanceled);
         } else if (mState == VRefreshState.PullUpToLoad) {
             mKernel.setState(VRefreshState.PullUpCanceled);
@@ -2225,6 +2232,16 @@ public class VSmartRefreshLayout extends ViewGroup implements VRefreshLayout, Ne
     @Override
     public VRefreshLayout setDragRate(float rate) {
         this.mDragRate = rate;
+        return this;
+    }
+
+    /**
+     * 设置 Header 开始显示状态的触发比例，默认三分之一。
+     * 同一轮下拉只发送一次 PullDownStarted，Header 完全隐藏后重置。
+     */
+    @Override
+    public VRefreshLayout setHeaderStartTriggerRate(float rate) {
+        mHeaderStartTriggerRate = Math.max(0f, Math.min(1f, rate));
         return this;
     }
 
@@ -3611,6 +3628,13 @@ public class VSmartRefreshLayout extends ViewGroup implements VRefreshLayout, Ne
                         setViceState(VRefreshState.PullDownToRefresh);
                     }
                     break;
+                case PullDownStarted:
+                    if (!mState.isOpening && isEnableRefreshOrLoadMore(mEnableRefresh)) {
+                        notifyStateChanged(VRefreshState.PullDownStarted);
+                    } else {
+                        setViceState(VRefreshState.PullDownStarted);
+                    }
+                    break;
                 case PullUpToLoad:
                     if (isEnableRefreshOrLoadMore(mEnableLoadMore) && !mState.isOpening && !mState.isFinishing && !(mFooterNoMoreData && mEnableFooterFollowWhenNoMoreData && mFooterNoMoreDataEffective)) {
                         notifyStateChanged(VRefreshState.PullUpToLoad);
@@ -3749,19 +3773,34 @@ public class VSmartRefreshLayout extends ViewGroup implements VRefreshLayout, Ne
             final View thisView = VSmartRefreshLayout.this;
             final int oldSpinner = mSpinner;
             mSpinner = spinner;
+            if (mSpinner <= 0) {
+                // Header 完全隐藏后，下一轮下拉可以再次发送 PullDownStarted。
+                mHeaderStartNotified = false;
+            }
             // 附加 mViceState.isDragging 的判断，是因为 isDragging 有时候时动画模拟的，如 autoRefresh 动画
             //
             if (isDragging && (mViceState.isDragging || mViceState.isOpening)) {
-                if (mSpinner > (mHeaderTriggerRate < 10 ? mHeaderHeight * mHeaderTriggerRate : mHeaderTriggerRate)) {
-                    if (mState != VRefreshState.ReleaseToTwoLevel) {
-                        mKernel.setState(VRefreshState.ReleaseToRefresh);
+                if (mSpinner > 0) {
+                    int startOffset = mHeaderStartTriggerRate == 0
+                            ? 1
+                            : Math.max(1, Math.round(mHeaderHeight * mHeaderStartTriggerRate));
+                    if (!mHeaderStartNotified && mSpinner >= startOffset) {
+                        mHeaderStartNotified = true;
+                        mKernel.setState(VRefreshState.PullDownStarted);
+                    }
+                    if (mSpinner > (mHeaderTriggerRate < 10
+                            ? mHeaderHeight * mHeaderTriggerRate
+                            : mHeaderTriggerRate)) {
+                        if (mState != VRefreshState.ReleaseToTwoLevel) {
+                            mKernel.setState(VRefreshState.ReleaseToRefresh);
+                        }
+                    } else if (mState != VRefreshState.PullDownStarted) {
+                        mKernel.setState(VRefreshState.PullDownToRefresh);
                     }
                 } else if (-mSpinner > (mFooterTriggerRate < 10 ? mFooterHeight * mFooterTriggerRate : mFooterTriggerRate) && !mFooterNoMoreData) {
                     mKernel.setState(VRefreshState.ReleaseToLoad);
                 } else if (mSpinner < 0 && !mFooterNoMoreData) {
                     mKernel.setState(VRefreshState.PullUpToLoad);
-                } else if (mSpinner > 0) {
-                    mKernel.setState(VRefreshState.PullDownToRefresh);
                 }
             }
             if (mRefreshContent != null) {

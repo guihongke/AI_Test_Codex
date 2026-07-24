@@ -100,6 +100,16 @@ public interface VRefreshLayout {
     VRefreshLayout setDragRate(@FloatRange(from = 0, to = 1) float rate);
 
     /**
+     * 设置开始下拉状态的触发比例。
+     * Header 可见高度首次达到 HeaderHeight * rate 时进入
+     * {@link VRefreshState#PullDownStarted}，同一次下拉只通知一次。
+     *
+     * @param rate 0 表示 Header 刚显示就触发，默认 1/3
+     * @return VRefreshLayout
+     */
+    VRefreshLayout setHeaderStartTriggerRate(@FloatRange(from = 0, to = 1) float rate);
+
+    /**
      * Set the ratio of the maximum height to drag header.
      * 设置下拉最大高度和Header高度的比率（将会影响可以下拉的最大高度）
      * @param rate ratio = (the maximum height to drag header)/(the height of header)

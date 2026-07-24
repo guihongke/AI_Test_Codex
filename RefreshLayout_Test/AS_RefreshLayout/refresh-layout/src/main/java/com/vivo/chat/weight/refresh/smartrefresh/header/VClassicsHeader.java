@@ -262,6 +262,7 @@ public class VClassicsHeader extends VClassicsAbstract<VClassicsHeader> implemen
         switch (newState) {
             case None:
                 updateView.setVisibility(mEnableLastTime ? VISIBLE : GONE);
+            case PullDownStarted:
             case PullDownToRefresh:
                 mTitleText.setText(mTextPulling);
                 arrowView.setVisibility(VISIBLE);

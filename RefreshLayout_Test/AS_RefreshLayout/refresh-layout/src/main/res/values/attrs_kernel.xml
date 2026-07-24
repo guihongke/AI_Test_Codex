@@ -55,6 +55,7 @@
         <attr name="srlHeaderInsetStart" format="dimension"/>
         <attr name="srlFooterInsetStart" format="dimension"/>
         <attr name="srlDragRate" format="float"/>
+        <attr name="srlHeaderStartTriggerRate" format="float"/>
         <attr name="srlHeaderMaxDragRate" format="float"/>
         <attr name="srlFooterMaxDragRate" format="float"/>
         <attr name="srlHeaderTriggerRate" format="float"/>
@@ -89,6 +90,13 @@
         <attr name="layout_srlBackgroundColor" format="color"/>
     </declare-styleable>
 
+    <declare-styleable name="VRefreshRecyclerLayout">
+        <!-- 用户下拉达到 PullDownStarted 时折叠 RecyclerView Header；自动刷新不会触发。 -->
+        <attr name="vrlAutoHideHeaderViewOnPullDown" format="boolean"/>
+        <!-- RecyclerView Header 折叠和恢复动画时长，单位毫秒。 -->
+        <attr name="vrlHeaderViewHideDuration" format="integer"/>
+    </declare-styleable>
+
     <style name="VSmartRefreshStyle">
         <item name="srlPrimaryColor">@android:color/holo_blue_dark</item>
         <item name="srlAccentColor">@android:color/white</item>
@@ -98,6 +106,7 @@
         <item name="srlHeaderInsetStart">0dp</item>
         <item name="srlFooterInsetStart">0dp</item>
         <item name="srlDragRate">0.5</item>
+        <item name="srlHeaderStartTriggerRate">0.33333334</item>
         <item name="srlHeaderMaxDragRate">2.5</item>
         <item name="srlFooterMaxDragRate">2.5</item>
         <item name="srlHeaderTriggerRate">1</item>

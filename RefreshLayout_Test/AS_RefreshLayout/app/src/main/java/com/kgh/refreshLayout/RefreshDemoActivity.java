@@ -126,6 +126,7 @@ public class RefreshDemoActivity extends AppCompatActivity {
                     @NonNull VRefreshState oldState,
                     @NonNull VRefreshState newState
             ) {
+                // Header 露出 1/3 时，这里会收到新增的 PullDownStarted 状态。
                 updateState(newState);
             }
         });
@@ -210,6 +211,8 @@ public class RefreshDemoActivity extends AppCompatActivity {
         mainHandler.removeCallbacksAndMessages(null);
         currentPage = 0;
         dataAdapter.replaceData(new ArrayList<>());
+        // 手动恢复列表 Header，便于再次体验“真实下拉时平滑隐藏”的完整过程。
+        refreshLayout.showHeaderViews(true);
         refreshLayout.resetNoMoreData();
         failNextSwitch.setChecked(false);
         refreshLayout.autoRefresh();
@@ -239,6 +242,7 @@ public class RefreshDemoActivity extends AppCompatActivity {
         int firstNumber = (page - 1) * PAGE_SIZE + 1;
         List<String> result = new ArrayList<>(PAGE_SIZE);
         for (int index = 0; index < PAGE_SIZE; index++) {
+//        for (int index = 0; index < 0; index++) {
             result.add(String.format(
                     Locale.CHINA,
                     "第 %d 条模拟数据",

@@ -32,6 +32,10 @@ Adapter 的设计，后者包含完整业务 API、XML 属性和接入示例。
 “这是一个header”。入口代码在 `app/src/main/java/com/kgh/refreshLayout/MainActivity.java`，
 完整用法在 `RefreshDemoActivity.java`。
 
+Header 默认露出三分之一时会进入 `VRefreshState.PullDownStarted`。可通过
+`setHeaderStartTriggerRate(float)` 或 XML 的 `srlHeaderStartTriggerRate` 修改阈值，
+并在 `VOnStateChangedListener` / `VOnMultiListener` 中接收状态回调。
+
 ## XML Progress Header/Footer
 
 ```xml

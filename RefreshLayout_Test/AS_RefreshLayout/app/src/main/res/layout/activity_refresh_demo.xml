@@ -29,8 +29,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        app:vrlAutoHideHeaderViewOnPullDown="true"
+        app:vrlHeaderViewHideDuration="180"
         app:srlEnableAutoLoadMore="true"
-        app:srlEnableLoadMore="true">
+        app:srlEnableLoadMore="true"
+        app:srlHeaderStartTriggerRate="0.33333334">
 
         <com.vivo.chat.weight.refresh.smartrefresh.header.VProgressHeader
             android:layout_width="match_parent"

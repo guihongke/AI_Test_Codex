@@ -14,12 +14,14 @@ public enum VRefreshState {
     ReleaseToTwoLevel(1,true,false,false,true,true), TwoLevelReleased(1,false,false,false,true,false),
     RefreshReleased(1,false,false,false,false,false), LoadReleased(2,false,false,false,false,false),
     Refreshing(1,false,true,false,false,false), Loading(2,false,true,false,false,false), TwoLevel(1, false, true,false,true,false),
-    RefreshFinish(1,false,false,true,false,false), LoadFinish(2,false,false,true,false,false), TwoLevelFinish(1,false,false,true,true,false);
+    RefreshFinish(1,false,false,true,false,false), LoadFinish(2,false,false,true,false,false), TwoLevelFinish(1,false,false,true,true,false),
+    /** Header 可见高度首次达到配置阈值，默认是 Header 高度的三分之一。 */
+    PullDownStarted(1,true,false,false,false,false);
 
     public final boolean isHeader;
     public final boolean isFooter;
     public final boolean isTwoLevel;// 二级刷新 ReleaseToTwoLevel TwoLevelReleased TwoLevel
-    public final boolean isDragging;// 正在拖动状态：PullDownToRefresh PullUpToLoad ReleaseToRefresh ReleaseToLoad ReleaseToTwoLevel
+    public final boolean isDragging;// 拖动状态：PullDownToRefresh PullDownStarted PullUpToLoad ReleaseToRefresh ReleaseToLoad ReleaseToTwoLevel
     public final boolean isOpening;// 正在刷新状态：Refreshing Loading TwoLevel
     public final boolean isFinishing;//正在完成状态：RefreshFinish LoadFinish TwoLevelFinish
     public final boolean isReleaseToOpening;// 释放立马打开 ReleaseToRefresh ReleaseToLoad ReleaseToTwoLevel
@@ -35,6 +37,10 @@ public enum VRefreshState {
     }
 
     public VRefreshState toFooter() {
+        // 新状态只有 Header 语义；包装成 Footer 时回退到最接近的拖动状态。
+        if (this == PullDownStarted) {
+            return PullUpToLoad;
+        }
         if (isHeader && !isTwoLevel) {
             return values()[ordinal() + 1];
         }

@@ -252,6 +252,7 @@ public class VMaterialHeader extends VSimpleComponent implements VRefreshHeader 
             case ReleaseToRefresh:
             case Refreshing:
                 break;
+            case PullDownStarted:
             case PullDownToRefresh:
                 mFinished = false;
                 circleView.setVisibility(VISIBLE);
